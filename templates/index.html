@@ -10,20 +10,23 @@
     <header class="left-column">
         <div class="gen">
             <h1>Juan Medina</h1>
-            <!-- <br> -->
+            
             <p>Este es mi portafolio personal.</p>
         </div>
-        <!-- <br> -->
+        
         <div class="nav-links"> 
             <ul>
-                <li><a href="{{ url_for('about')}}"><span class="line">ABOUT ME</span></a></li>
-                <li><a href="{{ url_for('projects')}}"><span class = "line">PERSONAL PROJECTS</span></a></li>
+                <li><a href="#about"><span class="line">ABOUT ME</span></a></li>
+                <li><a href="#projects"><span class="line">PERSONAL PROJECTS</span></a></li>
+                
+                <!-- <li><a href="{{ url_for('about')}}"><span class="line">ABOUT ME</span></a></li>
+                <li><a href="{{ url_for('projects')}}"><span class = "line">PERSONAL PROJECTS</span></a></li> -->
             </ul>
         </div>
-        <!-- <br>  -->
+        
         <footer class="social-links">
             <div class="icon-box">
-                <a href="www.linkedin.com/in/juan-medina-330aa5353" target="_blank" rel="noopener">
+                <a href="https://www.linkedin.com/in/juan-medina-330aa5353" target="_blank" rel="noopener">
                     <img src="{{ url_for('static', filename='img/icon_linkdin.png') }}" alt="LinkedIn" class="round-icon">
                 </a>
                 <span class="tooltip">LinkedIn</span>
@@ -44,5 +47,17 @@
             </div>           
         </footer>
     </header>
+
+    <main class="right-column">
+
+        <section id="about">
+            {% include 'includes/about.html' %}
+        </section>
+
+        <section id="projects">
+            {%include 'includes/projects.html' %}
+        </section>
+
+    </main>
 </body>
 </html>

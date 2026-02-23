@@ -108,3 +108,76 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
+/* ============================================================================================== */
+/* --- Estructura de la Columna Derecha --- */
+.right-column {
+    margin-left: 40%; /* Deja el espacio exacto para la columna izquierda fija */
+    width: 60%;
+    padding: 100px 80px; /* Espaciado superior y lateral */
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Separación generosa entre About y Projects */
+}
+
+/* --- Contenido del Fragmento About --- */
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #94a3b8; /* Gris suave */
+    margin-bottom: 25px; /* Espacio entre párrafos */
+}
+
+.about-content strong {
+    color: #e2e8f0; /* Blanco suave para resaltar tecnologías */
+    font-weight: 600;
+}
+
+/* --- Ajuste para las Secciones (Anclas) --- */
+#about, #projects {
+    scroll-margin-top: 100px; /* Evita que el contenido quede pegado al techo al navegar */
+}
+/* ============================================================================================== */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-card {
+    padding: 20px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.project-card:hover {
+    background-color: rgba(30, 41, 59, 0.5); /* Subtle highlight on hover */
+}
+
+.project-title a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    margin: 10px 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.tech-tags li {
+    background: rgba(45, 212, 191, 0.1);
+    color: #5eead4; /* Teal color for tech labels */
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}

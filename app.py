@@ -7,16 +7,15 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-# Route for the "About Me" link
+
 @app.route('/about')
 def about():
-    return "<h1>About Me Page</h1><p>Coming soon...</p>"
+    return render_template('about.html')
 
-# Route for the "Personal Projects" link
+
 @app.route('/projects')
 def projects():
-    return "<h1>Projects Page</h1><p>Coming soon...</p>"
+    return render_template('projects.html')
 
 if __name__ == '__main__':
-    # debug=True allows the server to auto-reload when you save changes
     app.run(debug=True, port=5000)
