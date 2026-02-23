@@ -1,0 +1,110 @@
+/* --- Estructura Principal --- */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* O la que prefieras */
+    background-color: #0f172a; /* Fondo oscuro tipo Slate */
+    color: #94a3b8;
+    display: flex;
+}
+
+.left-column {
+    position: fixed; /* Se queda quieta mientras haces scroll */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 40%;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Separa el título de los links y redes */
+    box-sizing: border-box;
+}
+
+/* --- Títulos --- */
+.gen h1 {
+    color: #e2e8f0;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.gen p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* --- Navegación --- */
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f1f5f9;
+}
+
+/* --- Redes Sociales e Iconos --- */
+.social-links {
+    display: flex;
+    gap: 20px; /* Espacio entre los iconos */
+    align-items: center;
+}
+
+.icon-box {
+    position: relative; /* Necesario para que el tooltip sepa dónde flotar */
+    display: inline-block;
+}
+
+.round-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Efecto blanco y negro opcional */
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.round-icon:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* --- Lógica del Tooltip --- */
+.tooltip {
+    visibility: hidden;
+    background-color: #1e293b;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    
+    /* Posicionamiento arriba del icono */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Efecto de aparición */
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+}
+
+/* Mostrar tooltip al pasar el mouse por el icon-box */
+.icon-box:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

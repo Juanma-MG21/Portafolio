@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <header class="left-column">
+        <div class="gen">
+            <h1>Juan Medina</h1>
+            <!-- <br> -->
+            <p>Este es mi portafolio personal.</p>
+        </div>
+        <!-- <br> -->
+        <div class="nav-links"> 
+            <ul>
+                <li><a href="{{ url_for('about')}}"><span class="line">ABOUT ME</span></a></li>
+                <li><a href="{{ url_for('projects')}}"><span class = "line">PERSONAL PROJECTS</span></a></li>
+            </ul>
+        </div>
+        <!-- <br>  -->
+        <footer class="social-links">
+            <div class="icon-box">
+                <a href="www.linkedin.com/in/juan-medina-330aa5353" target="_blank" rel="noopener">
+                    <img src="{{ url_for('static', filename='img/icon_linkdin.png') }}" alt="LinkedIn" class="round-icon">
+                </a>
+                <span class="tooltip">LinkedIn</span>
+            </div>
+
+            <div class="icon-box">
+                <a href="https://github.com/Juanma-MG21" target="_blank" rel="noopener">
+                    <img src="{{ url_for('static', filename='img/icon_github.png') }}" alt="GitHub" class="round-icon">
+                </a>
+                <span class="tooltip">GitHub</span>
+            </div>
+
+            <div class="icon-box">
+                <a href="https://www.instagram.com/juanmag2107/" target="_blank" rel="noopener">
+                    <img src="{{ url_for('static', filename='img/icon_instagram.jpeg') }}" alt="Instagram" class="round-icon">
+                </a>
+                <span class="tooltip">Instagram</span>
+            </div>           
+        </footer>
+    </header>
+</body>
+</html>
