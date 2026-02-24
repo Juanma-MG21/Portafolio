@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS `p0rtafolyo`
+DEFAULT CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE `p0rtafolyo`;
+
+CREATE USER IF NOT EXISTS 'JuanMG'@'localhost'
+IDENTIFIED BY 'Jmy*psd2027';
+
+GRANT ALL PRIVILEGES ON `p0rtafolyo`.* 
+TO 'JuanMG'@'localhost';
+
+CREATE TABLE IF NOT EXISTS messages (
+    ID_messages INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Mensaje TEXT NOT NULL,
+    Fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

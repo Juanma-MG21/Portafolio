@@ -10,14 +10,15 @@
     <header class="left-column">
         <div class="gen">
             <h1>Juan Medina</h1>
-            <h2>Desarrolador de software</h2>
+            <h2>Desarrollador de software</h2>
             <p>Transformando ideas complejas en experiencias digitales fluidas. Descubre cómo construyo mi futuro, línea a línea.</p>
         </div>
         
         <div class="nav-links"> 
             <ul>
-                <li><a href="#about"><span class="line">ABOUT ME</span></a></li>
-                <li><a href="#projects"><span class="line">PERSONAL PROJECTS</span></a></li>
+                <li><a href="#about"><span class="line">SOBRE MI</span></a></li>
+                <li><a href="#projects"><span class="line">PROYECTOS PERSONALES</span></a></li>
+                <li><a href="#contact"><span class="line">CONTÁCTAME</span></a></li>
             </ul>
         </div>
         
@@ -37,7 +38,7 @@
             </div>
 
             <div class="icon-box">
-                <a href="https://www.instagram.com/juanmag2107/" target="_blank" rel="noopener">
+                <a href="https://www.instagram.com/juan.medina283/" target="_blank" rel="noopener">
                     <img src="{{ url_for('static', filename='img/icon_instagram.jpeg') }}" alt="Instagram" class="round-icon">
                 </a>
                 <span class="tooltip">Instagram</span>
@@ -55,16 +56,31 @@
             {%include 'includes/projects.html' %}
         </section>
 
+        <section id="contact">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert-bubble active-alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+
+            {%include 'includes/contact.html' %}
+        </section>
+
     </main>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section[id]'); // Detecta tus IDs: about, projects, etc.
+    const sections = document.querySelectorAll('section[id]'); 
     const navLinks = document.querySelectorAll('.nav-links a');
 
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5 // Se activa cuando el 50% de la sección es visible
+        threshold: 0.5 
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -72,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
                 
-                // Quitamos 'active' de todos y se lo damos al actual
+
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href') === `#${id}`) {
@@ -84,6 +100,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     sections.forEach(section => observer.observe(section));
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const alerts = document.querySelectorAll('.active-alert');
+    
+    alerts.forEach(alert => {
+        // Espera 3 segundos y luego añade la clase de desvanecimiento
+        setTimeout(() => {
+            alert.classList.add('fade-out');
+            
+            // Elimina el elemento del HTML un segundo después de la animación
+            setTimeout(() => {
+                alert.remove();
+            }, 800);
+            
+        }, 3000);
+    });
 });
 </script>
 
