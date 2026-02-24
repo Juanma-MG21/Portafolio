@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi portafolio - Juan Medina</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
     <header class="left-column">
         <div class="gen">
             <h1>Juan Medina</h1>
-            
-            <p>Este es mi portafolio personal.</p>
+            <h2>Desarrolador de software</h2>
+            <p>Transformando ideas complejas en experiencias digitales fluidas. Descubre cómo construyo mi futuro, línea a línea.</p>
         </div>
         
         <div class="nav-links"> 
             <ul>
                 <li><a href="#about"><span class="line">ABOUT ME</span></a></li>
                 <li><a href="#projects"><span class="line">PERSONAL PROJECTS</span></a></li>
-                
-                <!-- <li><a href="{{ url_for('about')}}"><span class="line">ABOUT ME</span></a></li>
-                <li><a href="{{ url_for('projects')}}"><span class = "line">PERSONAL PROJECTS</span></a></li> -->
             </ul>
         </div>
         
@@ -59,5 +56,36 @@
         </section>
 
     </main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]'); // Detecta tus IDs: about, projects, etc.
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Se activa cuando el 50% de la sección es visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                
+                // Quitamos 'active' de todos y se lo damos al actual
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+});
+</script>
+
 </body>
 </html>
