@@ -6,7 +6,6 @@
 }
 
 .project-card:hover::before {
-    /* animation-play-state: paused; */
     opacity: 0;
 }
 /* La Card con borde animado */
@@ -20,7 +19,6 @@
     align-items: center;
     padding: 2px; /* Grosor del borde */
     background-color: #151515;
-    /* transition: transform 0.5s ease; */
     transition: all 1s ease;
 }
 
@@ -39,7 +37,7 @@
     animation: rotation_border 6000ms infinite linear;
     z-index: 0;
     transition: opacity 0.5s ease; /* Transición suave para que no desaparezca de golpe */
-    opacity: 1; /* Visible por defecto */
+    opacity: 1; 
 }
 
 
@@ -64,7 +62,6 @@
 
 .project-card:hover {
     transform: translateY(-5px);
-    /* Sombra negra con un toque de azul muy oscuro para profundidad */
     box-shadow: 2px 11px 13px -5px rgba(0, 0, 0, 0.581); 
     background-color: transparent; 
 }
@@ -116,28 +113,25 @@
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* 1. Reducimos el espacio entre tarjetas */
+
     .projects-list {
         gap: 25px;
     }
 
-    /* 2. Ajustamos el padding de la card para ganar espacio interno */
+  
     .project-content {
-        padding: 20px 15px; /* Menos relleno a los lados */
+        padding: 20px 15px; 
     }
 
-    /* 3. Reducimos el tamaño del título */
+
     .project-title a {
         font-size: 1.1rem;
     }
 
-    /* 4. En móviles el efecto hover (translateY) puede ser molesto 
-       al hacer scroll con el dedo, lo suavizamos o desactivamos */
     .project-card:hover {
         transform: translateY(-3px); 
     }
 
-    /* 5. Etiquetas de tecnología más compactas */
     .tech-tags {
         gap: 8px;
     }

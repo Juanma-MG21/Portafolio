@@ -134,20 +134,15 @@ body {
     padding: 5px 10px;
     border-radius: 6px;
     font-size: 0.75rem;
-    
-  
     position: absolute;
     z-index: 1;
     bottom: 125%; 
     left: 50%;
     transform: translateX(-50%);
-    
-   
     opacity: 0;
     transition: opacity 0.3s;
     white-space: nowrap; 
 }
-
 
 .icon-box:hover .tooltip {
     visibility: visible;
@@ -207,7 +202,7 @@ body {
     }
 
     .left-column {
-        position: static;       /* deja de ser fixed */
+        position: static; 
         width: 100%;
         height: auto;
         padding: 50px 30px 40px;
@@ -228,8 +223,7 @@ body {
         max-width: 100%;
     }
 
-    /* Ocultar nav en móvil (ya que el scroll es continuo y los links de ancla aún funcionan) */
-    /* Si prefieres mantenerla visible, elimina este bloque */
+/* Ocultar nav en móvil  */
     .nav-links {
         display: none;
     }

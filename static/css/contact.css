@@ -158,13 +158,13 @@
 
 @media (max-width: 768px) {
     #contact {
-        padding-bottom: 80px; /* Menos espacio al final en móvil */
+        padding-bottom: 80px; 
     }
 
     .contact-card {
-        padding: 20px; /* Reducimos el relleno interno */
+        padding: 20px;
         border-radius: 15px;
-        max-width: 100%; /* Que use todo el ancho disponible */
+        max-width: 100%; 
     }
 
     #contact-heading {
@@ -173,17 +173,17 @@
     }
 
     .field {
-        padding: 10px 14px; /* Inputs un poco más compactos */
+        padding: 10px 14px; 
         gap: 10px;
     }
 
     .input-field {
-        font-size: 0.9rem; /* Texto más cómodo para leer en móvil */
+        font-size: 0.9rem; 
     }
 
     /* Ajuste de la burbuja para que no sea gigante en móvil */
     .alert-bubble {
-        width: 90%; /* Casi todo el ancho */
+        width: 90%; 
         font-size: 0.85rem;
         padding: 12px 20px;
         top: 20px;
