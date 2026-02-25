@@ -151,3 +151,53 @@
     transition: opacity 0.8s ease;
     pointer-events: none;
 }
+
+/* ==========================================================================
+   RESPONSIVE CONTACT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    #contact {
+        padding-bottom: 80px; /* Menos espacio al final en móvil */
+    }
+
+    .contact-card {
+        padding: 20px; /* Reducimos el relleno interno */
+        border-radius: 15px;
+        max-width: 100%; /* Que use todo el ancho disponible */
+    }
+
+    #contact-heading {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .field {
+        padding: 10px 14px; /* Inputs un poco más compactos */
+        gap: 10px;
+    }
+
+    .input-field {
+        font-size: 0.9rem; /* Texto más cómodo para leer en móvil */
+    }
+
+    /* Ajuste de la burbuja para que no sea gigante en móvil */
+    .alert-bubble {
+        width: 90%; /* Casi todo el ancho */
+        font-size: 0.85rem;
+        padding: 12px 20px;
+        top: 20px;
+    }
+}
+
+/* Para pantallas muy angostas */
+@media (max-width: 400px) {
+    .contact-card {
+        padding: 15px;
+    }
+    
+    .submit-btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

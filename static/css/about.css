@@ -9,3 +9,11 @@
     color: #e2e8f0; 
     font-weight: 600;
 }
+
+@media (max-width: 480px) {
+    .about-content p {
+        font-size: 1rem; 
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+}

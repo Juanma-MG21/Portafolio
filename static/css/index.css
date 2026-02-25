@@ -171,3 +171,101 @@ body {
 }
 /* ============================================================================================== */
 
+/* ============================== RESPONSIVE ============================== */
+
+/* Tablet: reducir padding y tamaños antes de colapsar */
+@media (max-width: 1024px) {
+    .left-column {
+        width: 45%;
+        padding: 60px 50px;
+    }
+
+    .gen h1 {
+        font-size: 2.2rem;
+    }
+
+    .gen h2 {
+        font-size: 1.2rem;
+    }
+
+    .gen p {
+        font-size: 1rem;
+    }
+
+    .right-column {
+        margin-left: 45%;
+        width: 55%;
+        padding: 60px 40px;
+        gap: 70px;
+    }
+}
+
+/* Móvil: layout de columna única */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .left-column {
+        position: static;       /* deja de ser fixed */
+        width: 100%;
+        height: auto;
+        padding: 50px 30px 40px;
+        gap: 40px;
+    }
+
+    .gen h1 {
+        font-size: 2.2rem;
+        letter-spacing: -0.5px;
+    }
+
+    .gen h2 {
+        font-size: 1.1rem;
+    }
+
+    .gen p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    /* Ocultar nav en móvil (ya que el scroll es continuo y los links de ancla aún funcionan) */
+    /* Si prefieres mantenerla visible, elimina este bloque */
+    .nav-links {
+        display: none;
+    }
+
+    .social-links {
+        gap: 16px;
+    }
+
+    .right-column {
+        margin-left: 0;
+        width: 100%;
+        padding: 40px 30px 60px;
+        gap: 60px;
+    }
+
+    #about, #projects {
+        scroll-margin-top: 20px;
+    }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+    .left-column {
+        padding: 40px 20px 30px;
+    }
+
+    .gen h1 {
+        font-size: 1.8rem;
+    }
+
+    .gen h2 {
+        font-size: 1rem;
+    }
+
+    .right-column {
+        padding: 30px 20px 50px;
+        gap: 50px;
+    }
+}

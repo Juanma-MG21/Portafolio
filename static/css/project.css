@@ -110,3 +110,51 @@
     0% { transform: rotateZ(0deg); }
     100% { transform: rotateZ(360deg); }
 }
+
+/* ==========================================================================
+   RESPONSIVE PROJECTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Reducimos el espacio entre tarjetas */
+    .projects-list {
+        gap: 25px;
+    }
+
+    /* 2. Ajustamos el padding de la card para ganar espacio interno */
+    .project-content {
+        padding: 20px 15px; /* Menos relleno a los lados */
+    }
+
+    /* 3. Reducimos el tamaño del título */
+    .project-title a {
+        font-size: 1.1rem;
+    }
+
+    /* 4. En móviles el efecto hover (translateY) puede ser molesto 
+       al hacer scroll con el dedo, lo suavizamos o desactivamos */
+    .project-card:hover {
+        transform: translateY(-3px); 
+    }
+
+    /* 5. Etiquetas de tecnología más compactas */
+    .tech-tags {
+        gap: 8px;
+    }
+
+    .tech-tags li {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+}
+
+/* Para celulares muy pequeños (iPhone SE, etc) */
+@media (max-width: 400px) {
+    .project-title a {
+        font-size: 1rem;
+    }
+    
+    .project-description {
+        font-size: 0.85rem;
+    }
+}
